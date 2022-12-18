@@ -1,9 +1,10 @@
+
 import React, { useState } from "react";
 import "./App.css";
 import Chat from "./components/Chat";
 import Register from "./components/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LoginContext } from "./components/LoginContext.js";
+import { LoginContext } from "./components/LoginContext";
 import Login from "./components/Login"
 import Sidebar from "./components/Sidebar";
 
