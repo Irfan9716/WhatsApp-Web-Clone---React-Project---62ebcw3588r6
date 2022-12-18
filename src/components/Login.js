@@ -28,6 +28,7 @@ export default function Login() {
     };
     return (
         <div className="login">
+        <div className='login__container'>
             <div className="form">
                 <div>
                     <label htmlFor="email">Email</label>
@@ -54,7 +55,7 @@ export default function Login() {
                 <button id="submit-btn" onClick={signIn}>
                     Sign In
                 </button>
-
+                </div>
             </div>
         </div>
     );
