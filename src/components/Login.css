@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   display: flex;
   justify-content: center;
@@ -7,14 +12,16 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #dadbd3;
 }
-
 .form {
-  width: 400px;
-  border-radius: 5px;
-  background-color: #9633ff;
-  /* height:fit-content;  */
-  padding: 5px 10px;
-  color: white;
+    width: 400px;
+    border-radius: 5px;
+    background-color: #00a784;
+    padding: 5px ;
+    color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 label {
@@ -24,26 +31,31 @@ label {
 }
 
 input {
-  width: 95%;
-  padding: 8px 5px;
   border-radius: 5px;
+  border-style: none;
+  width: 100%;
+  padding: 8px 5px;
   margin-bottom: 10px;
 }
 
 #submit-btn {
-  border: none;
-  background-color: black;
-  width: 100%;
-  padding: 10px 8px;
-  color: white;
+  width: 70%;
+  color: #504e4e;
+  padding: 8px 3px;
   font-weight: bolder;
-  text-transform: uppercase;
+  text-transform: uppercase; 
   cursor: pointer;
-  margin: 9px 0px;
+  margin: 10px ;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-style: none;
+}
+.inputWraper{
+  width: 70%;
 }
 
 p {
-  font-size: 12px;
+  font-size: 15px;
   border-radius: 10px;
   cursor: pointer;
   display: inline-block;

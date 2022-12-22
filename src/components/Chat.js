@@ -47,7 +47,7 @@ export default function Chat({ userName }) {
 
     const sendMessage = async (e) => {
         e.preventDefault();
-        if (input == "") {
+        if (input === "") {
             return alert("Please enter your message");
         }
         {

@@ -27,9 +27,9 @@ export default function Register() {
             });
     };
     return (
-        <div className="login">
+      
             <div className="form">
-                <div>
+                <div className="inputWraper">
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
@@ -40,7 +40,7 @@ export default function Register() {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="inputWraper">
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
@@ -59,6 +59,6 @@ export default function Register() {
                     <span>Sign In</span>
                 </Link>
             </div>
-        </div>
+    
     );
 }

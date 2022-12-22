@@ -27,9 +27,9 @@ export default function Login() {
 
     };
     return (
-        <div className="login">
+ 
             <div className="form">
-                <div>
+                <div className="inputWraper">
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
@@ -40,7 +40,7 @@ export default function Login() {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="inputWraper">
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
@@ -56,6 +56,6 @@ export default function Login() {
                 </button>
 
             </div>
-        </div>
+
     );
 }
