@@ -24,8 +24,12 @@ export default function Login() {
       });
   };
   return (
+    
     <div className="login">
+        <img src='https://i.postimg.cc/1zk7FrH6/pngwing-com-2.png'
+            alt='' className="image"/>
       <div className="form">
+      
         <div className="inputWraper">
           <label htmlFor="email">Email</label>
           <input
@@ -51,6 +55,7 @@ export default function Login() {
         <button id="submit-btn" onClick={signIn}>
           Sign In
         </button>
+        
       </div>
     </div>
   );

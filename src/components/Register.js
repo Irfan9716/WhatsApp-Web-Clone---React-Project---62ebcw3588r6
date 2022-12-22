@@ -27,8 +27,11 @@ export default function Register() {
             });
     };
     return (
-      
+      <div class="login">
+        <img src='https://i.postimg.cc/1zk7FrH6/pngwing-com-2.png'
+            alt='' className="image"/>
             <div className="form">
+                
                 <div className="inputWraper">
                     <label htmlFor="email">Email</label>
                     <input
@@ -54,11 +57,11 @@ export default function Register() {
                 <button id="submit-btn" onClick={signUp}>
                     Sign Up
                 </button>
-                <p>Already have an account ?</p>
+                <p className="para">Already have an account ?</p>
                 <Link to="/login">
                     <span>Sign In</span>
                 </Link>
             </div>
-    
+            </div>
     );
 }
