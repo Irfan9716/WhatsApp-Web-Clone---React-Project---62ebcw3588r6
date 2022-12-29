@@ -12,10 +12,10 @@ import {
     orderBy,
     query,
     serverTimestamp,
-    Timestamp,
+    // Timestamp,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { async } from "@firebase/util";
+// import { async } from "@firebase/util";
 
 export default function Chat({ userName }) {
     const { groupId } = useParams();
@@ -26,7 +26,7 @@ export default function Chat({ userName }) {
     useEffect(() => {
         console.log(groupId);
         if (groupId) {
-            const getGroup = onSnapshot(doc(db, "groups", groupId), (doc) => {
+            onSnapshot(doc(db, "groups", groupId), (doc) => {
                 setGroupName(doc.data().name);
             });
 
@@ -34,7 +34,7 @@ export default function Chat({ userName }) {
                 collection(db, "groups", groupId, "messages"),
                 orderBy("timestamp", "asc")
             );
-            const getMessage = onSnapshot(q, (snapshot) => {
+            onSnapshot(q, (snapshot) => {
                 let msgList = [];
                 snapshot.docs.forEach((doc) => {
                     msgList.push({ ...doc.data() });
@@ -43,16 +43,17 @@ export default function Chat({ userName }) {
                 console.log(messages);
             });
         }
-    }, [groupId]);
+        
+    }, );
 
     const sendMessage = async (e) => {
         e.preventDefault();
         if (input === "") {
             return alert("Please enter your message");
         }
-        {
+  
             try {
-                const sendData = await addDoc(
+                await addDoc(
                     collection(db, "groups", groupId, "messages"),
                     {
                         message: input,
@@ -64,7 +65,7 @@ export default function Chat({ userName }) {
                 console.error("error", e);
             }
             setInput("");
-        }
+        
     };
 
     return (
@@ -100,7 +101,7 @@ export default function Chat({ userName }) {
             <div className="chatBody">
                 {messages.map((message) => (
                     <p
-                        className={`chatMessage ${message.name == userName && "chatReceiver"
+                        className={`chatMessage ${message.name === userName && "chatReceiver"
                             }`}
                     >
                         <span className="chatName">{message.name}</span>
