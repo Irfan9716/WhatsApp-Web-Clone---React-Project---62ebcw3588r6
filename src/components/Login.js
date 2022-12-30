@@ -13,7 +13,7 @@ export default function Login() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+      const user = userCredential.user;  
         setUserName(email.substring(0, [4]));
         setUserLogin(true);
         // ...
@@ -24,7 +24,7 @@ export default function Login() {
       });
   };
   return (
-    
+
     <div className="login">
         <img src='https://i.postimg.cc/1zk7FrH6/pngwing-com-2.png'
             alt='' className="image"/>

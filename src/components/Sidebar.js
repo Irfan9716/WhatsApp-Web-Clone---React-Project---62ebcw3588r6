@@ -9,7 +9,7 @@ function Sidebar({ userName }) {
     const [group, setGroup] = useState([]);
 
     const getGroups = async () => {
-        const getData = onSnapshot(collection(db, "groups"), (snapshot) => {
+        onSnapshot(collection(db, "groups"), (snapshot) => {
             let list = [];
             snapshot.docs.forEach((doc) => {
                 list.push({

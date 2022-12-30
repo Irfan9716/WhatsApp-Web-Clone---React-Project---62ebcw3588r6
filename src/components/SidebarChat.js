@@ -20,7 +20,7 @@ export default function SidebarChat({ addNewChat, name, id }) {
                 collection(db, "groups", id, "messages"),
                 orderBy("timestamp", "asc")
             );
-            const getMessage = onSnapshot(q, (snapshot) => {
+            onSnapshot(q, (snapshot) => {
                 snapshot.docs.forEach((doc) => {
                     setMsg(doc.data());
                 });
@@ -32,7 +32,7 @@ export default function SidebarChat({ addNewChat, name, id }) {
         const group = prompt("Please enter your group name");
         if (group) {
             try {
-                const docRef = await addDoc(collection(db, "groups"), {
+                await addDoc(collection(db, "groups"), {
                     name: group,
                 });
 
